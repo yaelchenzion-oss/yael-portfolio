@@ -1,0 +1,170 @@
+/* ===========================================================
+   Design tokens
+   A portfolio for a copywriter with a Parsons fashion-design
+   background who "thinks in systems and aesthetics at once."
+   The visual language borrows from garment pattern-cutting:
+   dashed seam lines, corner notches, grainline arrows, and
+   spec-sheet style labels — construction marks made visible.
+=========================================================== */
+
+:root {
+  --paper: #fbf9f5;
+  --paper-raised: #ffffff;
+  --ink: #1a1a1a;
+  --ink-soft: #6b6b66;
+  --ink-faint: #9a988f;
+
+  --blue: #6d9eeb;
+  --teal: #50a38c;
+  --terracotta: #ad623b;
+
+  --line: #ddd8cc;
+  --line-strong: #1a1a1a;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "DM Sans", Arial, sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+
+  --maxw: 1120px;
+  --gutter: clamp(20px, 5vw, 64px);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  color: var(--ink);
+}
+
+p { margin: 0; }
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* Eyebrow / spec-sheet label — mono, uppercase, tracked out.
+   Used the way a garment tag uses a style number. */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+/* Seam line: the dashed rule that stands in for section dividers */
+.seam {
+  border: none;
+  border-top: 1.5px dashed var(--terracotta);
+  margin: 0;
+  opacity: 0.65;
+}
+
+/* Grainline mark — the little arrow printed on every pattern piece
+   to show fabric direction. Used here as a scroll / directional cue. */
+.grainline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+}
+.grainline svg { display: block; }
+
+.piece {
+  position: relative;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  padding: 28px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.piece:hover {
+  border-color: var(--ink-faint);
+  box-shadow: 0 8px 24px -12px rgba(26, 26, 26, 0.18);
+}
+.piece-static:hover {
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 4px 10px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+@media (min-width: 680px) {
+  .services-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0 56px;
+    align-items: start;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+
+.btn-accent {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+.btn-accent:hover { background: var(--terracotta); color: var(--paper); }
+
+::selection { background: var(--blue); color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
