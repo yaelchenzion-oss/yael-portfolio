@@ -4,19 +4,19 @@ import { Orbit, WaveRule } from "./components/Motif";
 const services = [
   {
     title: "brand voice development",
-    body: "your brand has a personality. i help you find it, define it, and make sure it holds up across every channel — from your homepage headline to your ai chatbot responses. i've built voice systems for brands from the ground up, and i know how to make them actually stick.",
+    body: "Your brand has a personality. I help you find it, define it, and make sure it holds up across every channel — from your homepage headline to your AI chatbot responses. I've built voice systems for brands from the ground up, and I know how to make them actually stick.",
   },
   {
     title: "content strategy",
-    body: "good content doesn't happen by accident. i build the systems, workflows, and frameworks that turn content into a real business channel — rooted in audience research, seo, and a clear point of view.",
+    body: "Good content doesn't happen by accident. I build the systems, workflows, and frameworks that turn content into a real business channel — rooted in audience research, SEO, and a clear point of view.",
   },
   {
     title: "marketing copywriting",
-    body: "whether it's a product page, a landing page, or an ad that needs to stop someone mid-scroll — i write copy that sounds human and performs. strategy and creativity, working together.",
+    body: "Whether it's a product page, a landing page, or an ad that needs to stop someone mid-scroll — I write copy that sounds human and performs. Strategy and creativity, working together.",
   },
   {
     title: "ux writing & content design",
-    body: "the best ux copy is invisible. it moves people through an experience so naturally they don't notice it's working. i write with the full user journey in mind, collaborating closely with design and product teams.",
+    body: "The best UX copy is invisible. It moves people through an experience so naturally they don't notice it's working. I write with the full user journey in mind, collaborating closely with design and product teams.",
   },
 ];
 
@@ -95,9 +95,8 @@ export default function Home() {
           }}
         >
           <p style={{ fontSize: "clamp(18px, 2.2vw, 24px)", lineHeight: 1.6 }}>
-            i&rsquo;m a content strategist and copywriter with 6+ years of experience building brand voices,
-            content systems, and the kind of copy that actually does something. my background is in art and
-            design, which means i think in systems and aesthetics at the same time.
+            I&rsquo;ve spent 6+ years making brand voice scalable. So every headline, email, and automated
+            response sounds like you wrote it.
           </p>
           <Link href="/about" className="btn" style={{ whiteSpace: "nowrap" }}>
             about me

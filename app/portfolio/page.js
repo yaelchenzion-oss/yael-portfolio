@@ -30,10 +30,10 @@ export default function Portfolio() {
       <section className="wrap" style={{ padding: "clamp(56px, 10vw, 96px) var(--gutter) 40px" }}>
         <p className="eyebrow" style={{ marginBottom: 16 }}>Portfolio</p>
         <h1 style={{ fontSize: "clamp(28px, 4vw, 42px)", lineHeight: 1.25, maxWidth: 640, marginBottom: 16 }}>
-          selected <span className="accent">works</span>, for your review.
+          work that <span className="accent">speaks for itself</span>.
         </h1>
         <p style={{ color: "var(--ink-soft)", fontSize: 16, maxWidth: 560 }}>
-          brand voice, creative strategy, and the ai systems built to scale it.
+          brand voice, creative strategy, and the AI systems built to scale it.
         </p>
       </section>
 
