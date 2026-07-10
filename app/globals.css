@@ -152,7 +152,7 @@ p { margin: 0; }
   border: 1px solid transparent;
   transition: background 0.15s ease;
 }
-.nav-pill:hover { background: rgba(26, 26, 26, 0.06); color: var(--ink); }
+.nav-pill:hover { background: var(--surface-warm); color: var(--ink); }
 .nav-pill-active { border-color: var(--ink); color: var(--ink); }
 .nav-pill-accent:hover { color: var(--terracotta); }
 
