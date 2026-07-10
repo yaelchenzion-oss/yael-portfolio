@@ -35,7 +35,7 @@ export default function Contact() {
         <hr className="rule" style={{ margin: "24px 0" }} />
 
         <p className="eyebrow" style={{ marginBottom: 10 }}>Resume</p>
-        <a href="/Yael-Chen-Zion-Resume.docx" download className="btn" style={{ padding: "10px 20px" }}>
+        <a href="/Yael-Chen-Zion-Resume.pdf" download className="btn" style={{ padding: "10px 20px" }}>
           download resume
         </a>
       </div>

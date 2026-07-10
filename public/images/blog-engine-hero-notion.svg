@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 420" width="1120" height="420">
+  <rect width="1120" height="420" fill="#ffffff"></rect>
+
+  <rect x="50" y="50" width="450" height="320" rx="16" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"></rect>
+  <circle cx="74" cy="76" r="4" fill="#ad623b"></circle>
+  <circle cx="88" cy="76" r="4" fill="#50a38c"></circle>
+  <circle cx="102" cy="76" r="4" fill="#6d9eeb"></circle>
+  <line x1="50" y1="98" x2="500" y2="98" stroke="#ece7db" stroke-width="1.5"></line>
+
+  <text x="74" y="136" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="21" fill="#1a1a1a">best mattress by</text>
+  <text x="74" y="164" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="21" fill="#6d9eeb">sleep position</text>
+
+  <line x1="74" y1="200" x2="440" y2="200" stroke="#e4dfd2" stroke-width="5" stroke-linecap="round"></line>
+  <line x1="74" y1="220" x2="410" y2="220" stroke="#e4dfd2" stroke-width="5" stroke-linecap="round"></line>
+  <line x1="74" y1="240" x2="425" y2="240" stroke="#e4dfd2" stroke-width="5" stroke-linecap="round"></line>
+  <line x1="74" y1="260" x2="360" y2="260" stroke="#e4dfd2" stroke-width="5" stroke-linecap="round"></line>
+
+  <rect x="74" y="300" width="106" height="34" rx="17" fill="#ffffff" stroke="#50a38c" stroke-width="1.5"></rect>
+  <text x="127" y="322" font-family="DM Sans, Arial, sans-serif" font-weight="600" font-size="11" fill="#50a38c" text-anchor="middle">published</text>
+
+  <line x1="614" y1="235" x2="504" y2="235" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"></line>
+  <path d="M 512 229 L 504 235 L 512 241" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  <rect x="620" y="50" width="450" height="320" rx="16" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"></rect>
+  <text x="644" y="88" font-family="DM Sans, Arial, sans-serif" font-weight="700" font-size="10.5" letter-spacing="0.6" fill="#6b6b66">KEYWORD</text>
+  <text x="800" y="88" font-family="DM Sans, Arial, sans-serif" font-weight="700" font-size="10.5" letter-spacing="0.6" fill="#6b6b66">BRAND</text>
+  <text x="930" y="88" font-family="DM Sans, Arial, sans-serif" font-weight="700" font-size="10.5" letter-spacing="0.6" fill="#6b6b66">STATUS</text>
+  <line x1="620" y1="102" x2="1070" y2="102" stroke="#ece7db" stroke-width="1.5"></line>
+
+  <text x="644" y="140" font-family="DM Sans, Arial, sans-serif" font-size="12" fill="#1a1a1a">sleep position</text>
+  <rect x="795" y="122" width="90" height="28" rx="14" fill="#ffffff" stroke="#6d9eeb" stroke-width="1.5"></rect>
+  <text x="840" y="141" font-family="DM Sans, Arial, sans-serif" font-size="10.5" fill="#6d9eeb" text-anchor="middle">nectar</text>
+  <rect x="925" y="122" width="98" height="28" rx="14" fill="#ffffff" stroke="#50a38c" stroke-width="1.5"></rect>
+  <text x="974" y="141" font-family="DM Sans, Arial, sans-serif" font-size="10.5" fill="#50a38c" text-anchor="middle">published</text>
+
+  <text x="644" y="194" font-family="DM Sans, Arial, sans-serif" font-size="12" fill="#1a1a1a">cloud bed meaning</text>
+  <rect x="795" y="176" width="90" height="28" rx="14" fill="#ffffff" stroke="#ad623b" stroke-width="1.5"></rect>
+  <text x="840" y="195" font-family="DM Sans, Arial, sans-serif" font-size="10.5" fill="#ad623b" text-anchor="middle">dreamcloud</text>
+  <rect x="925" y="176" width="98" height="28" rx="14" fill="#ffffff" stroke="#50a38c" stroke-width="1.5"></rect>
+  <text x="974" y="195" font-family="DM Sans, Arial, sans-serif" font-size="10.5" fill="#50a38c" text-anchor="middle">published</text>
+
+  <text x="644" y="248" font-family="DM Sans, Arial, sans-serif" font-size="12" fill="#1a1a1a">mattress firmness guide</text>
+  <rect x="795" y="230" width="90" height="28" rx="14" fill="#ffffff" stroke="#6d9eeb" stroke-width="1.5"></rect>
+  <text x="840" y="249" font-family="DM Sans, Arial, sans-serif" font-size="10.5" fill="#6d9eeb" text-anchor="middle">nectar</text>
+  <rect x="925" y="230" width="98" height="28" rx="14" fill="#ffffff" stroke="#ad623b" stroke-width="1.5"></rect>
+  <text x="974" y="249" font-family="DM Sans, Arial, sans-serif" font-size="10.5" fill="#ad623b" text-anchor="middle">drafting</text>
+
+  <text x="644" y="302" font-family="DM Sans, Arial, sans-serif" font-size="12" fill="#1a1a1a">best cooling mattress</text>
+  <rect x="795" y="284" width="90" height="28" rx="14" fill="#ffffff" stroke="#ad623b" stroke-width="1.5"></rect>
+  <text x="840" y="303" font-family="DM Sans, Arial, sans-serif" font-size="10.5" fill="#ad623b" text-anchor="middle">dreamcloud</text>
+  <rect x="925" y="284" width="98" height="28" rx="14" fill="#ffffff" stroke="#6d9eeb" stroke-width="1.5"></rect>
+  <text x="974" y="303" font-family="DM Sans, Arial, sans-serif" font-size="10.5" fill="#6d9eeb" text-anchor="middle">briefed</text>
+</svg>

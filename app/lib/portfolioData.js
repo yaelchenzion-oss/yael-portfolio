@@ -223,7 +223,7 @@ export const systemsWork = [
     title: "Voice Velma",
     tags: ["Brand Voice", "AI Automation", "Content Strategy"],
     summary: "An AI agent trained on brand voice for six DTC sleep brands — writing on-brand copy and publishing it directly into the live content systems.",
-    heroImage: "/images/voice-velma-hero-b.svg",
+    heroImage: "/images/voice-velma-hero-chat.svg",
     sections: [
       {
         heading: "Brief",
@@ -252,7 +252,7 @@ export const systemsWork = [
     title: "Blog & Content Engine",
     tags: ["Content Strategy", "AI Automation", "SEO"],
     summary: "The pipeline that took blog output from 1–4 posts a month to 5+ a week, without adding headcount.",
-    heroImage: "/images/blog-engine-hero-c.svg",
+    heroImage: "/images/blog-engine-hero-notion.svg",
     sections: [
       {
         heading: "Brief",

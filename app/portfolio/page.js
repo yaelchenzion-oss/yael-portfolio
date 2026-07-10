@@ -4,6 +4,13 @@ import { PinMark } from "../components/Motif";
 
 export const metadata = { title: "Portfolio — Yael Chen Zion" };
 
+// Brand Voice display order — lead with the anatomy-of-a-guide piece.
+const BRAND_VOICE_ORDER = ["resident-brand-voice", "dreamcloud-website", "mayven-website"];
+const brandVoice = [
+  ...BRAND_VOICE_ORDER.map((slug) => brandVoiceWork.find((p) => p.slug === slug)).filter(Boolean),
+  ...brandVoiceWork.filter((p) => !BRAND_VOICE_ORDER.includes(p.slug)),
+];
+
 function ProjectCard({ p }) {
   return (
     <Link href={`/portfolio/${p.slug}`} className="card-link" style={{ display: "block", color: "inherit" }}>
@@ -40,7 +47,7 @@ export default function Portfolio() {
       <section className="wrap" style={{ padding: "0 var(--gutter) 72px" }}>
         <p className="eyebrow" style={{ marginBottom: 20 }}>Collection I — Brand Voice</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
-          {brandVoiceWork.map((p) => <ProjectCard key={p.slug} p={p} />)}
+          {brandVoice.map((p) => <ProjectCard key={p.slug} p={p} />)}
         </div>
       </section>
 
@@ -49,9 +56,9 @@ export default function Portfolio() {
       </div>
 
       <section className="wrap" style={{ padding: "0 var(--gutter) 72px" }}>
-        <p className="eyebrow" style={{ marginBottom: 20 }}>Collection II — Copy &amp; Content</p>
-        <div className="row-4">
-          {copyWork.map((p) => <ProjectCard key={p.slug} p={p} />)}
+        <p className="eyebrow" style={{ marginBottom: 20 }}>Collection II — AI &amp; Automation</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+          {systemsWork.map((p) => <ProjectCard key={p.slug} p={p} />)}
         </div>
       </section>
 
@@ -60,9 +67,9 @@ export default function Portfolio() {
       </div>
 
       <section className="wrap" style={{ padding: "0 var(--gutter) 96px" }}>
-        <p className="eyebrow" style={{ marginBottom: 20 }}>Collection III — AI &amp; Automation</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
-          {systemsWork.map((p) => <ProjectCard key={p.slug} p={p} />)}
+        <p className="eyebrow" style={{ marginBottom: 20 }}>Collection III — Copy &amp; Content</p>
+        <div className="row-4">
+          {copyWork.map((p) => <ProjectCard key={p.slug} p={p} />)}
         </div>
       </section>
     </>

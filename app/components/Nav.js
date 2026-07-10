@@ -10,7 +10,7 @@ const links = [
   { href: "/contact", label: "contact" },
 ];
 
-const RESUME_HREF = "/Yael-Chen-Zion-Resume.docx";
+const RESUME_HREF = "/Yael-Chen-Zion-Resume.pdf";
 
 function isActive(pathname, href) {
   if (href === "/") return pathname === "/";
