@@ -61,21 +61,8 @@ export default function Portfolio() {
 
       <section className="wrap" style={{ padding: "0 var(--gutter) 96px" }}>
         <p className="eyebrow" style={{ marginBottom: 20 }}>Collection III — AI &amp; Automation</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
-          {systemsWork.map((p) => (
-            <div key={p.slug} className="card card-static">
-              <PinMark />
-              <p style={{ fontSize: 18, fontWeight: 700, marginBottom: 14, textTransform: "lowercase" }}>{p.title}</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10, fontSize: 14, color: "var(--ink-soft)", marginBottom: 18 }}>
-                <p><strong style={{ color: "var(--ink)" }}>problem: </strong>{p.problem}</p>
-                <p><strong style={{ color: "var(--ink)" }}>approach: </strong>{p.approach}</p>
-                <p><strong style={{ color: "var(--ink)" }}>result: </strong>{p.result}</p>
-              </div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                {p.tags.map((t) => <span key={t} className="tag">{t}</span>)}
-              </div>
-            </div>
-          ))}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+          {systemsWork.map((p) => <ProjectCard key={p.slug} p={p} />)}
         </div>
       </section>
     </>

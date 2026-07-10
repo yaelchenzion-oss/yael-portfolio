@@ -220,30 +220,86 @@ export const copyWork = [
 export const systemsWork = [
   {
     slug: "voice-velma",
-    title: "Voice Velma: Brand Voice Infrastructure",
-    tags: ["AI Automation"],
-    summary: "Notion AI brand voice agents for four DTC sleep brands — the foundation everything else is built on.",
-    problem: "When I joined Resident, none of the four DTC sleep brands I write for had a defined voice — every team was guessing at tone independently, and anything that needed real brand judgment had to route through me directly, one request at a time.",
-    approach: "Built voice guides from scratch for each brand, then turned them into standalone Notion AI agents — one per brand — so any team member could write on-brand copy independently. Because it's built as a Notion AI agent, it integrates directly with the blog content agent and the knowledge base — all three draw from the same source of truth instead of operating as separate tools.",
-    result: "Personal productivity up 85%, and capacity freed up for everything that came after — the blog engine, the knowledge base automation, the landing page process. This is the system the rest of the work sits on top of.",
+    title: "Voice Velma",
+    tags: ["Brand Voice", "AI Automation", "Content Strategy"],
+    summary: "An AI agent trained on brand voice for six DTC sleep brands — writing on-brand copy and publishing it directly into the live content systems.",
+    heroImage: "/images/voice-velma-hero-b.svg",
+    sections: [
+      {
+        heading: "Brief",
+        body: "When I joined Resident, none of the four DTC sleep brands I wrote for had a defined voice — every team was guessing at tone independently, and anything that needed real brand judgment had to route through me directly, one request at a time.",
+      },
+      {
+        heading: "Step 1: Origin",
+        body: "The system started small: I trained my own Claude on each brand's voice, just to speed up my own writing. As it proved useful, it became a shared resource — separate Claude Projects for each brand, so any team member could reference the right voice without pulling me in. Over the next year, as our brand roster grew to six (including Newton Baby, acquired during this period, and a sixth brand not yet launched), that per-brand structure started to strain. The real shift came when we moved the entire reference library into Notion alongside the rest of our content ecosystem. This live structure is what made it possible to build one joint agent instead of six separate tools.",
+      },
+      {
+        heading: "Step 2: Infrastructure",
+        body: "This wasn't a case of building an agent to fit our existing systems. Instead, we restructured our infrastructure to fit her. Velma consults a Notion reference library at the moment she's writing: brand voice guides (which always win), shared format rules by content type, and brand-specific examples where they exist. Product facts — specs, dimensions, certifications, availability — come from a live knowledge base she reads in real time, so she's never inventing a detail that isn't true. She's triggered by an @-mention or within Notion's agent dashboard, and, most crucially, I can see her chats with team members to run consistent quality control.",
+      },
+      {
+        heading: "Step 3: Integration",
+        body: "Velma doesn't simply provide copy. She writes PDPs that populate directly into our PDP library and blog posts that populate directly into the blog database. There's no copy-paste handoff between \"what she wrote\" and \"what's live in the system.\"",
+      },
+      {
+        heading: "Result",
+        body: "Six brands, one system, and zero hallucinated specs. My personal productivity is up 85%, and that productivity is now being passed on organization-wide.",
+      },
+    ],
   },
   {
     slug: "blog-content-engine",
     title: "Blog & Content Engine",
-    tags: ["AI Automation"],
-    summary: "A full publishing pipeline — briefs, voice guides, image generation, and a clean editorial split — that scaled the blog to 5+ posts a week without adding headcount.",
-    problem: "The blog was a contributing role, not an owned one — and when the SEO manager left, I inherited the whole thing with no process, no templates, and no clear handoff.",
-    approach: "Built brief templates, brand-specific voice guides for blog content, and an image-generation pipeline for on-brand illustrations, then closed the loop with Customer Insights and Customer Success so posts were grounded in real customer questions instead of guesswork. When a new SEO manager came on, we split it cleanly: I own the copy, the images, and posting; he owns topic generation and SEO strategy.",
-    result: "Consistently publishing 5+ posts a week without adding headcount — the templates and pipeline are what made that possible without sacrificing quality.",
+    tags: ["Content Strategy", "AI Automation", "SEO"],
+    summary: "The pipeline that took blog output from 1–4 posts a month to 5+ a week, without adding headcount.",
+    heroImage: "/images/blog-engine-hero-c.svg",
+    sections: [
+      {
+        heading: "Brief",
+        body: "When the blog function landed on my plate, there was no clear system — no templates, defined process, or reliable way to scale.",
+      },
+      {
+        heading: "Step 1: Foundation",
+        body: "Before anything could be automated, the blog needed a repeatable shape. I built brief templates, brand-specific voice guides for blog content, and an image-generation pipeline for on-brand illustrations — groundwork that made consistent output possible even before an agent was writing anything.",
+      },
+      {
+        heading: "Step 2: Automation",
+        body: "Once that foundation existed, it became the basis for extending Voice Velma into the blog pipeline. She treats each row in the content database as a full creative brief. A single row carries the keyword, search intent, angle, word count target, and brand — provided by our SEO manager — so she has everything she needs to write without back-and-forth. Before drafting, she pulls the relevant brand voice guide and blog format rules from the same reference library that governs all her writing, then writes to that brand's tone and structure using only verified product facts and credible research. Once a post is written, she creates the database entry herself, links it back to the originating pipeline row, and updates that row's status automatically. No manual handoff between \"drafted\" and \"tracked.\"",
+      },
+      {
+        heading: "Step 3: Collaboration",
+        body: "We grounded the process in real customer questions by closing the loop with Customer Insights, Customer Success, and Reddit — working from their insights instead of keyword guesswork alone.",
+      },
+      {
+        heading: "Result",
+        body: "Consistently publishing 5+ posts a week without adding headcount, up from 1-4 posts a month when I started. With the templates, pipeline, and back-end databases now in place, that scale was possible without sacrificing quality.",
+      },
+    ],
   },
   {
     slug: "knowledge-base-paula",
     title: "Knowledge Base Automation & Product Paula",
-    tags: ["AI Automation"],
-    summary: "A centralized Notion pipeline that replaced scattered documentation with one system powering CS, the AI chatbot, and Product Paula.",
-    problem: "Product guides were scattered across Brandfolder, effectively unscannable — CS agents, the AI chatbot, and the product marketing team were all working from inconsistent information, and product marketing kept fielding the same basic questions over and over.",
-    approach: "Automated a Notion pipeline that takes product guide PDFs and generates structured pages for review — one internal version for CS agents, one external version feeding the AI chatbot — replacing the scattered documentation with one centralized, multi-tool system. Once that base existed, building Product Paula, a Notion AI agent connected to the full catalog, took about twenty minutes — a natural extension of infrastructure that was already there, not a separate project.",
-    result: "A single knowledge base now powers CS, the chatbot, and Paula. Paula had active users across multiple departments within two business days of launch.",
+    tags: ["AI Automation", "Content Strategy"],
+    summary: "A single source of truth for product information — powering customer success, an AI chatbot, and a Notion agent that answers product questions across brands.",
+    heroImage: "/images/kb-paula-hero-d.svg",
+    sections: [
+      {
+        heading: "Brief",
+        body: "At Resident Home, product information lived in scattered documentation across Brandfolder, Notion, and Google Drive, with multiple sources of truth and no clear hierarchy between them. That made misinformation easy: all of our teams were working from different versions of the same facts, and product marketing kept fielding the same basic questions over and over.",
+      },
+      {
+        heading: "Step 1: Creation",
+        body: "Our first goal was narrow: when migrating to a new AI chatbot, we wanted to give our customer success team one reliable place to work from. I built a paired-page model in Notion with external and internal versions — the former linking to the customer-facing chatbot, the latter containing more sensitive, team-specific information. To accomplish this, I used Claude to automatically pull information from our existing PDF product guides and populate a set of Notion templates. To continue maintaining a single source of truth, all launch information pulls from the Physical Product Catalog (also in Notion). This structure fed both sides of CS at once: the external pages grounded the AI chatbot's answers to customers, and the internal pages gave live agents a searchable reference mid-conversation.",
+      },
+      {
+        heading: "Step 2: Expansion",
+        body: "Once that foundation existed, its value became obvious beyond our original use case. The same clean, verified structure meant any team member could use it as a single source of truth — which we turned into Product Paula. Paula is a Notion agent that answers product questions across all Ashley Digital brands by searching the documentation, cross-checking sources when products or information conflict, and citing back to the source page. If Paula can't find a sourced answer, she logs the question for product marketing rather than guessing.",
+      },
+      {
+        heading: "Result",
+        body: "A single knowledge base now powers CS back-end, our AI chatbot, Voice Velma, and Product Paula. Simplicity, clarity, and efficiency — that's the power of process.",
+      },
+    ],
   },
 ];
 
