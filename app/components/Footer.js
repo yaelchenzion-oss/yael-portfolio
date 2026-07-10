@@ -1,33 +1,30 @@
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer style={{ borderTop: "1.5px dashed var(--terracotta)", marginTop: 120 }}>
+    <footer style={{ borderTop: "1px solid var(--ink)" }}>
       <div
         className="wrap"
         style={{
-          padding: "36px var(--gutter) 48px",
+          padding: "28px var(--gutter)",
           display: "flex",
           flexWrap: "wrap",
-          gap: 20,
+          gap: 16,
           alignItems: "center",
           justifyContent: "space-between",
         }}
       >
-        <p className="eyebrow" style={{ color: "var(--ink-faint)" }}>
-          © {year} Yael Chen Zion
-        </p>
-        <div style={{ display: "flex", gap: 24 }}>
-          <a className="eyebrow" href="mailto:yaelchenzion@gmail.com" style={{ color: "var(--ink)" }}>
-            Email
+        <p style={{ fontSize: 12, color: "var(--ink-soft)" }}>© {year} yael chen zion</p>
+        <div style={{ display: "flex", gap: 20 }}>
+          <a href="mailto:yaelchenzion@gmail.com" style={{ fontSize: 12, color: "var(--ink)" }}>
+            email
           </a>
           <a
-            className="eyebrow"
             href="https://linkedin.com/in/yaelchenzion"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "var(--ink)" }}
+            style={{ fontSize: 12, color: "var(--ink)" }}
           >
-            LinkedIn
+            linkedin
           </a>
         </div>
       </div>

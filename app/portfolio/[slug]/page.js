@@ -2,6 +2,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { allWork, brandVoiceWork, copyWork } from "../../lib/portfolioData";
+import { PinMark } from "../../components/Motif";
 
 export function generateStaticParams() {
   return allWork.map((p) => ({ slug: p.slug }));
@@ -14,70 +15,41 @@ export function generateMetadata({ params }) {
 }
 
 function ProjectImage({ src, alt, style = {} }) {
-  return (
-    <img
-      src={src}
-      alt={alt}
-      style={{ width: "100%", display: "block", borderRadius: 2, ...style }}
-    />
-  );
+  return <img src={src} alt={alt} style={{ width: "100%", display: "block", borderRadius: 16, ...style }} />;
 }
 
-function ImageSlot({ label, aspectRatio = "16/7", style = {} }) {
+function PitchCard({ label, children }) {
   return (
-    <div
-      style={{
-        width: "100%",
-        aspectRatio,
-        background: "var(--paper-raised)",
-        border: "1.5px dashed var(--line)",
-        borderRadius: 2,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 8,
-        ...style,
-      }}
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--ink-faint)" strokeWidth="1.5">
-        <rect x="3" y="3" width="18" height="18" rx="2" />
-        <circle cx="8.5" cy="8.5" r="1.5" />
-        <polyline points="21 15 16 10 5 21" />
-      </svg>
-      <p className="eyebrow" style={{ color: "var(--ink-faint)", fontSize: 10 }}>{label}</p>
+    <div className="card">
+      <PinMark />
+      <p className="eyebrow" style={{ marginBottom: 14 }}>{label}</p>
+      <div style={{ fontSize: 15.5, lineHeight: 1.75, whiteSpace: "pre-line", color: "var(--ink)" }}>{children}</div>
     </div>
   );
 }
 
-function Section({ heading, body, body2, list, imageBefore, image, image2, title }) {
+function Section({ heading, body, body2, list, imageBefore, image, image2 }) {
   return (
     <div>
-      {imageBefore && (
-        <ProjectImage src={imageBefore} alt={heading} style={{ marginBottom: 28 }} />
-      )}
-      <p className="eyebrow" style={{ marginBottom: 14 }}>{heading}</p>
+      {imageBefore && <ProjectImage src={imageBefore} alt={heading} style={{ marginBottom: 28 }} />}
+      <p style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontSize: 22, color: "var(--teal)", marginBottom: 14 }}>
+        {heading}
+      </p>
       {body && (
-        <div style={{ fontSize: 17, lineHeight: 1.8, whiteSpace: "pre-line", marginBottom: list || body2 ? 16 : 0 }}>
+        <div style={{ fontSize: 16.5, lineHeight: 1.8, whiteSpace: "pre-line", marginBottom: list || body2 ? 16 : 0 }}>
           {body}
         </div>
       )}
       {list && (
         <ul style={{ margin: "0 0 16px 0", paddingLeft: 20, display: "flex", flexDirection: "column", gap: 8 }}>
           {list.map((item) => (
-            <li key={item} style={{ fontSize: 16, lineHeight: 1.7, color: "var(--ink-soft)" }}>{item}</li>
+            <li key={item} style={{ fontSize: 15.5, lineHeight: 1.7, color: "var(--ink-soft)" }}>{item}</li>
           ))}
         </ul>
       )}
-      {body2 && (
-        <div style={{ fontSize: 17, lineHeight: 1.8 }}>{body2}</div>
-      )}
-      {image && (
-        <ProjectImage src={image} alt={`${heading} example`} style={{ marginTop: 28 }} />
-      )}
-      {image2 && (
-        <ProjectImage src={image2} alt={`${heading} example 2`} style={{ marginTop: 16 }} />
-      )}
+      {body2 && <div style={{ fontSize: 16.5, lineHeight: 1.8 }}>{body2}</div>}
+      {image && <ProjectImage src={image} alt={`${heading} example`} style={{ marginTop: 28 }} />}
+      {image2 && <ProjectImage src={image2} alt={`${heading} example 2`} style={{ marginTop: 16 }} />}
     </div>
   );
 }
@@ -93,37 +65,57 @@ export default function ProjectPage({ params }) {
     : "AI & Automation";
 
   return (
-    <section className="wrap" style={{ padding: "clamp(56px, 10vw, 96px) 0 96px" }}>
-      <Link href="/portfolio" className="eyebrow" style={{ color: "var(--ink-faint)", display: "inline-block", marginBottom: 40 }}>
-        ← Portfolio
+    <section className="wrap" style={{ padding: "clamp(56px, 10vw, 96px) var(--gutter) 96px" }}>
+      <Link
+        href="/portfolio"
+        className="eyebrow"
+        style={{ color: "var(--ink-faint)", display: "inline-block", marginBottom: 32 }}
+      >
+        ← portfolio
       </Link>
 
-      <p className="eyebrow" style={{ marginBottom: 14 }}>
-        {collection}
-      </p>
-      <h1 style={{ fontSize: "clamp(28px, 4.5vw, 48px)", maxWidth: 700, marginBottom: 20 }}>{item.title}</h1>
+      <p className="eyebrow" style={{ marginBottom: 14 }}>{collection}</p>
+      <h1 style={{ fontSize: "clamp(28px, 4.2vw, 44px)", lineHeight: 1.2, maxWidth: 720, marginBottom: 24, textTransform: "lowercase" }}>
+        {item.title}
+      </h1>
 
-      <div style={{ display: "flex", flexWrap: "wrap", marginBottom: 48 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 40 }}>
         {item.tags.map((t) => <span key={t} className="tag">{t}</span>)}
       </div>
 
-      <hr className="seam" style={{ marginBottom: 48 }} />
-
       {/* Hero image */}
       {item.heroImage ? (
-        <ProjectImage src={item.heroImage} alt={item.title} style={{ marginBottom: 56 }} />
+        <ProjectImage src={item.heroImage} alt={item.title} style={{ borderRadius: 18, marginBottom: 56 }} />
       ) : (
-        <ImageSlot label="Hero image" aspectRatio="16/6" style={{ marginBottom: 56 }} />
+        <div
+          style={{
+            width: "100%",
+            aspectRatio: "16/6",
+            background: "var(--paper-raised)",
+            border: "1px solid var(--line)",
+            borderRadius: 18,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: 56,
+          }}
+        >
+          <p className="eyebrow" style={{ color: "var(--ink-faint)", fontSize: 10 }}>Hero image</p>
+        </div>
       )}
 
-      {/* AI systems */}
+      {/* AI systems: problem / approach / result as pinned cards */}
       {item.problem && (
-        <div style={{ maxWidth: 680, display: "flex", flexDirection: "column", gap: 40 }}>
-          <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--ink-soft)" }}>{item.summary}</p>
-          <Section heading="The Problem" body={item.problem} />
-          <Section heading="The Approach" body={item.approach} />
-          <Section heading="The Result" body={item.result} />
-        </div>
+        <>
+          <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--ink-soft)", maxWidth: 680, marginBottom: 48 }}>
+            {item.summary}
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20, maxWidth: 1000 }}>
+            <PitchCard label="The Problem">{item.problem}</PitchCard>
+            <PitchCard label="The Approach">{item.approach}</PitchCard>
+            <PitchCard label="The Result">{item.result}</PitchCard>
+          </div>
+        </>
       )}
 
       {/* Rich sections */}
@@ -134,10 +126,10 @@ export default function ProjectPage({ params }) {
           )}
           {item.sections.map((s, i) => (
             <React.Fragment key={s.heading}>
-              <Section {...s} title={item.title} />
+              <Section {...s} />
               {i === 0 && item.link && (
                 <a href={item.link} target="_blank" rel="noreferrer" className="btn" style={{ alignSelf: "flex-start" }}>
-                  {item.linkLabel || "Visit the site →"}
+                  {item.linkLabel || "visit the site →"}
                 </a>
               )}
             </React.Fragment>
@@ -145,7 +137,7 @@ export default function ProjectPage({ params }) {
         </div>
       )}
 
-      {/* Gallery — shown after sections (or standalone for imageOnly with no sections) */}
+      {/* Gallery */}
       {item.galleryImages && (
         <div style={{ maxWidth: 680, display: "flex", flexDirection: "column", gap: 20, marginTop: item.sections ? 48 : 0 }}>
           {item.galleryImages.map((src, i) => (
@@ -163,7 +155,6 @@ export default function ProjectPage({ params }) {
       {item.draft && !item.sections && (
         <div style={{ maxWidth: 620 }}>
           <p style={{ fontSize: 18, lineHeight: 1.75, color: "var(--ink-soft)", marginBottom: 32 }}>{item.summary}</p>
-          <ImageSlot label="Samples coming soon" aspectRatio="4/3" style={{ maxWidth: 560, marginBottom: 32 }} />
           <p className="eyebrow" style={{ color: "var(--terracotta)" }}>Full case study coming soon.</p>
         </div>
       )}

@@ -1,15 +1,17 @@
 /* ===========================================================
-   Design tokens
-   A portfolio for a copywriter with a Parsons fashion-design
-   background who "thinks in systems and aesthetics at once."
-   The visual language borrows from garment pattern-cutting:
-   dashed seam lines, corner notches, grainline arrows, and
-   spec-sheet style labels — construction marks made visible.
+   Design tokens — "3a" direction
+   A portfolio for a copywriter/content strategist with an
+   art & design background. Warm paper ground, a single serif
+   accent (Instrument Serif, italic) used sparingly against
+   DM Sans, pill-shaped controls, softly rounded cards, and a
+   small family of hand-drawn "construction marks" (orbit,
+   wave, pin) as the recurring motif.
 =========================================================== */
 
 :root {
   --paper: #fbf9f5;
   --paper-raised: #ffffff;
+  --surface-warm: #f5ece5; /* clay wash — callouts */
   --ink: #1a1a1a;
   --ink-soft: #6b6b66;
   --ink-faint: #9a988f;
@@ -18,12 +20,14 @@
   --teal: #50a38c;
   --terracotta: #ad623b;
 
-  --line: #ddd8cc;
-  --line-strong: #1a1a1a;
+  --line: #ece7db;
+  --line-hover: #c9c2b0;
 
-  --font-display: "Playfair Display", Georgia, serif;
+  --font-display: "Instrument Serif", Georgia, serif; /* accent only */
   --font-body: "DM Sans", Arial, sans-serif;
-  --font-mono: "Space Mono", "Courier New", monospace;
+
+  --card-radius: 18px;
+  --pill-radius: 24px;
 
   --maxw: 1120px;
   --gutter: clamp(20px, 5vw, 64px);
@@ -43,14 +47,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-
 a { color: inherit; text-decoration: none; }
+a:hover { color: var(--blue); }
 
 img { max-width: 100%; display: block; }
 
+/* Headlines are set in DM Sans — the serif is reserved for the
+   inline accent word (.accent), never the whole line. */
 h1, h2, h3 {
-  font-family: var(--font-display);
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-weight: 400;
   margin: 0;
   color: var(--ink);
 }
@@ -63,78 +69,57 @@ p { margin: 0; }
   padding: 0 var(--gutter);
 }
 
-/* Eyebrow / spec-sheet label — mono, uppercase, tracked out.
-   Used the way a garment tag uses a style number. */
+/* Eyebrow / label — DM Sans, uppercase, tracked out, teal. */
 .eyebrow {
   font-family: var(--font-body);
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--teal);
 }
 
-/* Seam line: the dashed rule that stands in for section dividers */
-.seam {
+/* Inline serif accent — one word or short phrase per line. */
+.accent {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--blue);
+}
+
+/* Section divider — a plain hairline rule. */
+.rule {
   border: none;
-  border-top: 1.5px dashed var(--terracotta);
+  border-top: 1px solid var(--line);
   margin: 0;
-  opacity: 0.65;
 }
 
-/* Grainline mark — the little arrow printed on every pattern piece
-   to show fabric direction. Used here as a scroll / directional cue. */
-.grainline {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: var(--ink-faint);
-}
-.grainline svg { display: block; }
-
-.piece {
+/* Softly rounded card. Pair with <PinMark /> for the corner motif. */
+.card {
   position: relative;
   background: var(--paper-raised);
   border: 1px solid var(--line);
-  padding: 28px;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  border-radius: var(--card-radius);
+  padding: 26px;
+  transition: border-color 0.18s ease;
 }
-.piece:hover {
-  border-color: var(--ink-faint);
-  box-shadow: 0 8px 24px -12px rgba(26, 26, 26, 0.18);
-}
-.piece-static:hover {
-  border-color: var(--line);
-  box-shadow: none;
-}
+.card-link:hover .card,
+.card:hover { border-color: var(--line-hover); }
+.card-static:hover { border-color: var(--line); }
 
+/* Pill tag. */
 .tag {
   display: inline-block;
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--ink-soft);
   border: 1px solid var(--line);
-  border-radius: 2px;
-  padding: 4px 10px;
-  margin-right: 6px;
-  margin-bottom: 6px;
+  border-radius: 20px;
+  padding: 4px 12px;
+  text-transform: lowercase;
 }
 
-@media (min-width: 680px) {
-  .services-grid {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 0 56px;
-    align-items: start;
-  }
-}
-
+/* Pill buttons — filled ink (default) and terracotta outline. */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -142,21 +127,33 @@ p { margin: 0; }
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 12px 20px;
+  letter-spacing: 0.02em;
+  color: var(--paper);
+  background: var(--ink);
   border: 1.5px solid var(--ink);
-  color: var(--ink);
-  background: transparent;
+  border-radius: var(--pill-radius);
+  padding: 13px 24px;
   cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
 }
-.btn:hover { background: var(--ink); color: var(--paper); }
+.btn:hover { background: #333; color: var(--paper); }
 
-.btn-accent {
-  border-color: var(--terracotta);
+.btn-outline {
+  background: transparent;
   color: var(--terracotta);
+  border-color: var(--terracotta);
 }
-.btn-accent:hover { background: var(--terracotta); color: var(--paper); }
+.btn-outline:hover { background: var(--surface-warm); color: var(--terracotta); }
+
+/* Responsive: two-column hero / callout collapse on narrow screens. */
+.hero-grid { display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: center; }
+.callout-grid { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+
+@media (max-width: 720px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-grid .hero-motif { display: none; }
+  .callout-grid { grid-template-columns: 1fr; justify-items: start; }
+}
 
 ::selection { background: var(--blue); color: #fff; }
 
