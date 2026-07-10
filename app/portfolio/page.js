@@ -50,7 +50,7 @@ export default function Portfolio() {
 
       <section className="wrap" style={{ padding: "0 var(--gutter) 72px" }}>
         <p className="eyebrow" style={{ marginBottom: 20 }}>Collection II — Copy &amp; Content</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+        <div className="row-4">
           {copyWork.map((p) => <ProjectCard key={p.slug} p={p} />)}
         </div>
       </section>

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "home" },
-  { href: "/portfolio", label: "work" },
+  { href: "/portfolio", label: "portfolio" },
   { href: "/about", label: "about" },
   { href: "/contact", label: "contact" },
 ];
@@ -45,13 +45,11 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 aria-current={active ? "page" : undefined}
+                className={active ? "nav-pill nav-pill-active" : "nav-pill"}
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: 12,
                   color: active ? "var(--ink)" : "var(--ink-soft)",
-                  border: active ? "1px solid var(--ink)" : "1px solid transparent",
-                  borderRadius: 20,
-                  padding: "7px 18px",
                 }}
               >
                 {l.label}
@@ -61,12 +59,12 @@ export default function Nav() {
           <a
             href={RESUME_HREF}
             download
+            className="nav-pill nav-pill-accent"
             style={{
               fontFamily: "var(--font-body)",
               fontWeight: 600,
               fontSize: 12,
               color: "var(--terracotta)",
-              padding: "7px 18px",
             }}
           >
             resume

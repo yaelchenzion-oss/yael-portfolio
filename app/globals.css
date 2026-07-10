@@ -145,6 +145,22 @@ p { margin: 0; }
 }
 .btn-outline:hover { background: var(--surface-warm); color: var(--terracotta); }
 
+/* Nav link pills — subtle shaded background on hover; active is outlined. */
+.nav-pill {
+  border-radius: 20px;
+  padding: 7px 18px;
+  border: 1px solid transparent;
+  transition: background 0.15s ease;
+}
+.nav-pill:hover { background: rgba(26, 26, 26, 0.06); color: var(--ink); }
+.nav-pill-active { border-color: var(--ink); color: var(--ink); }
+.nav-pill-accent:hover { color: var(--terracotta); }
+
+/* Card row locked to four across, collapsing on smaller screens. */
+.row-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 860px) { .row-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .row-4 { grid-template-columns: 1fr; } }
+
 /* Responsive: two-column hero / callout collapse on narrow screens. */
 .hero-grid { display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: center; }
 .callout-grid { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }

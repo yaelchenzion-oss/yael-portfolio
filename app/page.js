@@ -7,7 +7,7 @@ const services = [
     body: "Your brand has a personality. I help you find it, define it, and make sure it holds up across every channel — from your homepage headline to your AI chatbot responses. I've built voice systems for brands from the ground up, and I know how to make them actually stick.",
   },
   {
-    title: "content strategy",
+    title: "content\nstrategy",
     body: "Good content doesn't happen by accident. I build the systems, workflows, and frameworks that turn content into a real business channel — rooted in audience research, SEO, and a clear point of view.",
   },
   {
@@ -75,10 +75,10 @@ export default function Home() {
           What I do
         </p>
         <WaveRule width={100} height={26} style={{ display: "block", marginBottom: 28 }} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 20 }}>
+        <div className="row-4">
           {services.map((s) => (
             <div key={s.title} className="card">
-              <p style={{ fontSize: 20, fontWeight: 700, lineHeight: 1.3, marginBottom: 12 }}>{s.title}</p>
+              <p style={{ fontSize: 20, fontWeight: 700, lineHeight: 1.3, marginBottom: 12, whiteSpace: "pre-line" }}>{s.title}</p>
               <p style={{ fontSize: 14.5, lineHeight: 1.7, color: "var(--ink-soft)" }}>{s.body}</p>
             </div>
           ))}
