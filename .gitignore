@@ -15,5 +15,8 @@ out/
 .env.test.local
 .env.production.local
 
+# Design mockups (kept locally, not tracked)
+mockups/
+
 # OS
 .DS_Store
