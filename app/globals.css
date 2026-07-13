@@ -167,7 +167,6 @@ p { margin: 0; }
 
 @media (max-width: 720px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-grid .hero-motif { display: none; }
   .callout-grid { grid-template-columns: 1fr; justify-items: start; }
 }
 

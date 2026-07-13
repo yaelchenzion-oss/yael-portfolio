@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Orbit, WaveRule } from "./components/Motif";
+import { WaveRule } from "./components/Motif";
 
 const services = [
   {
@@ -7,12 +7,12 @@ const services = [
     body: "Your brand has a personality. I help you find it, define it, and make sure it holds up across every channel — from your homepage headline to your AI chatbot responses. I've built voice systems for brands from the ground up, and I know how to make them actually stick.",
   },
   {
-    title: "content\nstrategy",
-    body: "Good content doesn't happen by accident. I build the systems, workflows, and frameworks that turn content into a real business channel — rooted in audience research, SEO, and a clear point of view.",
+    title: "ai & automation systems",
+    body: "I don't just use AI to write faster, I build the infrastructure that makes it work. Voice agents, automated content pipelines, knowledge bases that plug into a whole team's workflow — I design the systems that let AI produce on-brand work at scale, not just review it after the fact.",
   },
   {
-    title: "marketing copywriting",
-    body: "Whether it's a product page, a landing page, or an ad that needs to stop someone mid-scroll — I write copy that sounds human and performs. Strategy and creativity, working together.",
+    title: "content strategy & copywriting",
+    body: "Good content doesn't happen by accident. I turn your content into a real business channel, then write marketing copy, landing pages, and product pages that perform. Everything I do is rooted in insights, SEO, and a clear point of view.",
   },
   {
     title: "ux writing & content design",
@@ -48,7 +48,32 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <Orbit size={180} style={{ justifySelf: "center" }} className="hero-motif" />
+        <div
+          className="hero-photo"
+          style={{ justifySelf: "center", position: "relative", width: 190, height: 190 }}
+        >
+          <span
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              inset: -12,
+              borderRadius: "50%",
+              border: "1.5px dashed var(--terracotta)",
+            }}
+          />
+          <img
+            src="/images/yael-portrait.jpg"
+            alt="Yael Chen Zion"
+            style={{
+              width: "100%",
+              height: "100%",
+              borderRadius: "50%",
+              objectFit: "cover",
+              objectPosition: "center 50%",
+              display: "block",
+            }}
+          />
+        </div>
       </section>
 
       <div className="wrap">
