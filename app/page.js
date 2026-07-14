@@ -23,10 +23,7 @@ const services = [
 export default function Home() {
   return (
     <>
-      <section
-        className="wrap hero-grid"
-        style={{ padding: "clamp(56px, 10vw, 96px) var(--gutter) 12px" }}
-      >
+      <section className="wrap hero-grid hero">
         <div>
           <p className="eyebrow" style={{ marginBottom: 20 }}>
             Copywriter · Content Strategist · San Francisco Bay Area
@@ -39,19 +36,17 @@ export default function Home() {
             — i help brands figure out what they want to say, and make sure{" "}
             <span className="accent">every word, everywhere</span>, sounds like them.
           </h1>
+          <div className="hero-cta hero-cta--inline">
+            <Link href="/portfolio" className="btn">
+              see my work
+            </Link>
+            <Link href="/about" className="btn btn-outline">
+              about me
+            </Link>
+          </div>
         </div>
-        <div
-          className="hero-photo"
-          style={{
-            justifySelf: "center",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 28,
-            transform: "translateY(-48px)",
-          }}
-        >
-          <div style={{ position: "relative", width: 190, height: 190 }}>
+        <div className="hero-photo">
+          <div className="hero-photo-circle">
             <span
               aria-hidden="true"
               style={{
@@ -74,7 +69,7 @@ export default function Home() {
               }}
             />
           </div>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", marginTop: 24 }}>
+          <div className="hero-cta hero-cta--stacked">
             <Link href="/portfolio" className="btn">
               see my work
             </Link>
