@@ -25,7 +25,7 @@ export default function Home() {
     <>
       <section
         className="wrap hero-grid"
-        style={{ padding: "clamp(56px, 10vw, 96px) var(--gutter) 40px" }}
+        style={{ padding: "clamp(56px, 10vw, 96px) var(--gutter) 12px" }}
       >
         <div>
           <p className="eyebrow" style={{ marginBottom: 20 }}>
@@ -39,7 +39,42 @@ export default function Home() {
             — i help brands figure out what they want to say, and make sure{" "}
             <span className="accent">every word, everywhere</span>, sounds like them.
           </h1>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+        </div>
+        <div
+          className="hero-photo"
+          style={{
+            justifySelf: "center",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 28,
+            transform: "translateY(-48px)",
+          }}
+        >
+          <div style={{ position: "relative", width: 190, height: 190 }}>
+            <span
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                inset: -12,
+                borderRadius: "50%",
+                border: "1.5px dashed var(--terracotta)",
+              }}
+            />
+            <img
+              src="/images/yael-portrait.jpg"
+              alt="Yael Chen Zion"
+              style={{
+                width: "100%",
+                height: "100%",
+                borderRadius: "50%",
+                objectFit: "cover",
+                objectPosition: "center 50%",
+                display: "block",
+              }}
+            />
+          </div>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", marginTop: 24 }}>
             <Link href="/portfolio" className="btn">
               see my work
             </Link>
@@ -47,32 +82,6 @@ export default function Home() {
               about me
             </Link>
           </div>
-        </div>
-        <div
-          className="hero-photo"
-          style={{ justifySelf: "center", position: "relative", width: 190, height: 190 }}
-        >
-          <span
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              inset: -12,
-              borderRadius: "50%",
-              border: "1.5px dashed var(--terracotta)",
-            }}
-          />
-          <img
-            src="/images/yael-portrait.jpg"
-            alt="Yael Chen Zion"
-            style={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "50%",
-              objectFit: "cover",
-              objectPosition: "center 50%",
-              display: "block",
-            }}
-          />
         </div>
       </section>
 

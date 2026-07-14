@@ -23,7 +23,7 @@ export default function Nav() {
   return (
     <header style={{ background: "var(--paper)", borderBottom: "1px solid var(--line)" }}>
       <div
-        className="wrap"
+        className="wrap nav-bar"
         style={{
           display: "flex",
           alignItems: "center",
@@ -33,11 +33,12 @@ export default function Nav() {
       >
         <Link
           href="/"
+          className="nav-logo"
           style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16, color: "var(--ink)" }}
         >
           yael chen zion
         </Link>
-        <nav style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <nav className="nav-links" style={{ display: "flex", gap: 8, alignItems: "center" }}>
           {links.map((l) => {
             const active = isActive(pathname, l.href);
             return (

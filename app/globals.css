@@ -170,6 +170,63 @@ p { margin: 0; }
   .callout-grid { grid-template-columns: 1fr; justify-items: start; }
 }
 
+/* Portfolio: sticky in-page nav for the three collections. */
+.collection-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.collection-nav-inner {
+  display: flex;
+  gap: 22px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.collection-nav-inner::-webkit-scrollbar { display: none; }
+.coll-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  opacity: 0.5;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+}
+.coll-link:hover { opacity: 1; color: var(--terracotta); }
+.coll-link-active { opacity: 1; color: var(--terracotta); }
+.coll-num {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+}
+@media (max-width: 560px) {
+  .coll-link { font-size: 10px; letter-spacing: 0.08em; }
+}
+
+/* Nav: keep the 3-line logo, wrap the link pills tightly on phones. */
+@media (max-width: 600px) {
+  .nav-bar { align-items: flex-start; gap: 16px; }
+  .nav-logo { max-width: 3.5em; line-height: 1.3; }
+  .nav-links { flex-wrap: wrap; justify-content: flex-end; gap: 4px; }
+  .nav-links .nav-pill,
+  .nav-links .nav-pill-accent { padding: 6px 12px; }
+}
+
 ::selection { background: var(--blue); color: #fff; }
 
 @media (prefers-reduced-motion: reduce) {
