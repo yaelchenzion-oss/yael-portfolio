@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { WaveRule } from "./components/Motif";
+import HeroCtas from "./components/HeroCtas";
 
 const services = [
   {
@@ -36,14 +37,7 @@ export default function Home() {
             — i help brands figure out what they want to say, and make sure{" "}
             <span className="accent">every word, everywhere</span>, sounds like them.
           </h1>
-          <div className="hero-cta hero-cta--inline">
-            <Link href="/portfolio" className="btn">
-              see my work
-            </Link>
-            <Link href="/about" className="btn btn-outline">
-              about me
-            </Link>
-          </div>
+          <HeroCtas className="hero-cta hero-cta--inline" />
         </div>
         <div className="hero-photo">
           <div className="hero-photo-circle">
@@ -69,14 +63,7 @@ export default function Home() {
               }}
             />
           </div>
-          <div className="hero-cta hero-cta--stacked">
-            <Link href="/portfolio" className="btn">
-              see my work
-            </Link>
-            <Link href="/about" className="btn btn-outline">
-              about me
-            </Link>
-          </div>
+          <HeroCtas className="hero-cta hero-cta--stacked" />
         </div>
       </section>
 
